@@ -2,6 +2,11 @@
 const USD = 5.34
 const GBP = 4.98
 const EUR = 5.97
+const JPY = 0.038
+const MXN = 0.29
+const CNH = 0.77
+const NOK = 0.55
+const SGD = 4.27
 
 // Inicialização das variáveis 
 const form = document.querySelector("form")
@@ -27,13 +32,28 @@ form.onsubmit = (e) => {
     e.preventDefault() // Desativa a ação padrão de submit
     switch(currency.value){
         case "USD":
-            convertCurrency(moneyValue.value, USD, "$", "Dolares")
+            convertCurrency(moneyValue.value, USD, "$", "Dólares")
             break
         case "GBP":
             convertCurrency(moneyValue.value, GBP, "₤", "Libras")
             break
         case "EUR":
-            convertCurrency(moneyValue.value, EUR, "€", "Euro")
+            convertCurrency(moneyValue.value, EUR, "€", "Euros")
+            break
+        case "JPY":
+            convertCurrency(moneyValue.value, JPY, "¥", "Ienes")
+            break
+        case "MXN":
+            convertCurrency(moneyValue.value, MXN, "M$", "Pesos")
+            break
+        case "CNH":
+            convertCurrency(moneyValue.value, CNH, "¥", "Yuans")
+            break
+        case "NOK":
+            convertCurrency(moneyValue.value, NOK, "kr", "Coroas")
+            break
+        case "SGD":
+            convertCurrency(moneyValue.value, SGD, "$", "Dólares")
             break
     }
 }
