@@ -50,7 +50,7 @@ function convertCurrency(moneyValue, price, symbol, nameCurrency){
     if(reverseConvert.checked){
         convertDescription.textContent = `R$ 1 = ${formatCurrencyUSD(1/price).replace("$", symbol)}`
 
-        let convert = price / moneyValue
+        let convert =  moneyValue /price
         convertResult.textContent = `${formatCurrencyUSD(convert).replace("$", "")} ${nameCurrency}`
     }
 }
