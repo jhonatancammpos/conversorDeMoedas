@@ -11,6 +11,7 @@ let currency = document.querySelector("#currency")
 const footer = document.querySelector("footer")
 let convertDescription = document.querySelector("#description")
 let convertResult = document.querySelector("#result")
+let reverseConvert = document.querySelector("#reversecurrency")
 
 window.onload = load
 moneyValue.addEventListener("input", () => {
@@ -26,25 +27,32 @@ form.onsubmit = (e) => {
     e.preventDefault() // Desativa a ação padrão de submit
     switch(currency.value){
         case "USD":
-            convertCurrency(moneyValue.value, USD, "$")
+            convertCurrency(moneyValue.value, USD, "$", "Dolares")
             break
         case "GBP":
-            convertCurrency(moneyValue.value, GBP, "₤")
+            convertCurrency(moneyValue.value, GBP, "₤", "Libras")
             break
         case "EUR":
-            convertCurrency(moneyValue.value, EUR, "€")
+            convertCurrency(moneyValue.value, EUR, "€", "Euro")
             break
     }
 }
 
 // Função para converter a moeda
-function convertCurrency(moneyValue, price, symbol){
+function convertCurrency(moneyValue, price, symbol, nameCurrency){
     convertDescription.textContent = `${symbol}1 = ${formatCurrencyBRL(price)}`
 
     let convert = moneyValue * price
     convertResult.textContent = `${formatCurrencyBRL(convert).replace("R$", "")} Reais`
     
     convertDescription.style.display = "block"
+
+    if(reverseConvert.checked){
+        convertDescription.textContent = `R$ 1 = ${formatCurrencyUSD(1/price)}`
+
+        let convert = price / moneyValue
+        convertResult.textContent = `${formatCurrencyUSD(convert).replace("$", "")} ${nameCurrency}`
+    }
 }
 
 // Modifica o footer quando carrega a página
@@ -59,6 +67,13 @@ function formatCurrencyBRL(value){
     return Number(value).toLocaleString("pt-BR",{
         style: "currency",
         currency: "BRL",
+    })
+}
+
+function formatCurrencyUSD(value){
+    return Number(value).toLocaleString("en-US",{
+        style: "currency",
+        currency: "USD",
     })
 }
 

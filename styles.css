@@ -172,6 +172,19 @@ footer .myname {
   display: block;
 
 }
+.reversediv{
+  display: flex;
+  flex-direction: row;
+}
+#reversecurrency {
+  width: 1rem;
+  margin: 1rem 0;
+}
+
+.inpreversecurrency {
+  width: 95%;
+  margin: 1rem .2rem;
+}
 
 @media (max-width:  576px) {
   body {
