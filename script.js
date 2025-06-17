@@ -48,7 +48,7 @@ function convertCurrency(moneyValue, price, symbol, nameCurrency){
     convertDescription.style.display = "block"
 
     if(reverseConvert.checked){
-        convertDescription.textContent = `R$ 1 = ${formatCurrencyUSD(1/price)}`
+        convertDescription.textContent = `R$ 1 = ${formatCurrencyUSD(1/price).replace("$", symbol)}`
 
         let convert = price / moneyValue
         convertResult.textContent = `${formatCurrencyUSD(convert).replace("$", "")} ${nameCurrency}`
