@@ -178,6 +178,7 @@ footer .myname {
 }
 #reversecurrency {
   margin: 1rem 0 1rem .3rem;
+  padding: 0;
 }
 
 .inpreversecurrency {
@@ -220,7 +221,7 @@ footer .myname {
   }
 
   .inpreversecurrency{
-    font-size: .5rem;
+    font-size: .58rem;
   }
   
   button {
