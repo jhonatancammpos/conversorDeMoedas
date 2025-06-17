@@ -177,8 +177,7 @@ footer .myname {
   flex-direction: row;
 }
 #reversecurrency {
-  width: 1rem;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem .3rem;
 }
 
 .inpreversecurrency {
@@ -218,6 +217,10 @@ footer .myname {
 
   option {
     font-size: .8rem;
+  }
+
+  .inpreversecurrency{
+    font-size: .58rem;
   }
   
   button {
